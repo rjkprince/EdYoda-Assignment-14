@@ -37,7 +37,14 @@ export default class Header extends Component {
   ];
   render() {
     const Nav = this.Navigation.map((item) => {
-      return <Navigations key={item.id} name={item.name} icon={item.icon} />;
+      return (
+        <Navigations
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          icon={item.icon}
+        />
+      );
     });
     return (
       <div className={classes.Header}>

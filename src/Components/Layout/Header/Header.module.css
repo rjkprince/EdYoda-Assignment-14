@@ -5,23 +5,25 @@
   color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 1.5% 10%;
+  align-items: center;
+  padding: 0% 10%;
   margin: 0;
   box-sizing: border-box;
 }
 .Navigations {
   margin: 0;
   width: 50%;
-
+  height: 100%;
   display: flex;
-  justify-content: space-between;
 }
 .Login {
   font-size: 15px;
+  cursor: pointer;
 }
 .Login span {
   font-weight: 700;
 }
 .Logo {
   font-size: 21px;
+  cursor: pointer;
 }
