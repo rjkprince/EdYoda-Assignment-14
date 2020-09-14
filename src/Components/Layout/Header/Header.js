@@ -10,29 +10,34 @@ import Navigations from './Navigations/Navigations';
 export default class Header extends Component {
   Navigation = [
     {
+      id: 1,
       name: 'Dashboard',
       icon: faTachometerAlt,
     },
     {
+      id: 2,
       name: 'Reports',
       icon: faFileAlt,
     },
     {
+      id: 3,
       name: 'Products',
       icon: faShoppingCart,
     },
     {
+      id: 4,
       name: 'Accounts',
       icon: faUser,
     },
     {
+      id: 5,
       name: 'Settings',
       icon: faCog,
     },
   ];
   render() {
     const Nav = this.Navigation.map((item) => {
-      return <Navigations name={item.name} icon={item.icon} />;
+      return <Navigations key={item.id} name={item.name} icon={item.icon} />;
     });
     return (
       <div className={classes.Header}>
