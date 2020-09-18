@@ -7,6 +7,8 @@
   cursor: pointer;
   padding: 0 20px;
   transition: all linear 100ms;
+  position: relative;
+  height: 100%;
 }
 
 .Icons {
@@ -19,4 +21,41 @@
 }
 .Nav:hover {
   color: #f5a623;
+}
+.Nav:hover .NavDropdown {
+  color: #fff;
+}
+.ActiveNav {
+  background-color: #f5a623;
+  color: #fff;
+}
+.ActiveNav:hover {
+  background-color: #f5a623;
+  color: #fff;
+}
+.NavDropdown {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+}
+.NavDropdownMob {
+  display: none;
+}
+@media (max-width: 1120px) {
+  .Nav {
+    flex-direction: row;
+    padding: 10px 20px;
+    padding-bottom: 20px;
+  }
+  .Icons {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .NavDropdown {
+    display: none;
+  }
+  .NavDropdownMob {
+    display: block;
+  }
 }

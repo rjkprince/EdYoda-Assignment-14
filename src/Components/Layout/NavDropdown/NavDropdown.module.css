@@ -1,0 +1,17 @@
+.NavDropdown {
+  width: 100%;
+  background-color: #567086;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.NavDropdown p {
+  transition: all linear 100ms;
+}
+.NavDropdown p:hover {
+  color: #f5a623;
+}
+.showDrp {
+  display: flex;
+}

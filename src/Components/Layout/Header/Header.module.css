@@ -6,8 +6,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0% 10%;
+  padding: 0% 8%;
   margin: 0;
+
   box-sizing: border-box;
 }
 .Navigations {
@@ -16,9 +17,14 @@
   height: 100%;
   display: flex;
 }
+.Link {
+  text-decoration: none;
+  color: #fff;
+}
 .Login {
   font-size: 15px;
   cursor: pointer;
+  transition: all linear 100ms;
 }
 .Login span {
   font-weight: 700;
@@ -26,4 +32,74 @@
 .Logo {
   font-size: 21px;
   cursor: pointer;
+}
+.Login:hover {
+  color: #f5a623;
+}
+.HbIcon {
+  border: 1px solid #708da8;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 2px;
+  border-radius: 0;
+  padding: 10px 15px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 37px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+}
+.HbIcon > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 37px;
+}
+.HbIcon .Bar {
+  background-color: #fff;
+  width: 100%;
+  padding: 1.5px 5px;
+}
+.HbIcon:hover {
+  border-color: #f5a623;
+}
+.HbIcon:hover .Bar {
+  background-color: #f5a623;
+}
+.Dropdown {
+  position: absolute;
+  top: 37px;
+  right: 0px;
+  width: 200px;
+  background-color: #708da8;
+  display: none;
+  height: fit-content;
+  transition: all linear 500ms;
+}
+.ShowDrp {
+  display: block;
+}
+.DrpLogin {
+  display: block !important;
+  margin-left: 50px;
+}
+@media (max-width: 1120px) {
+  .Navigations {
+    display: none;
+  }
+  .Login {
+    display: none;
+  }
+  .HbIcon {
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .Header {
+    height: 40px;
+  }
 }

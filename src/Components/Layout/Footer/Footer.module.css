@@ -10,3 +10,8 @@
   height: 90px;
   box-shadow: 0 0 5px #435c70;
 }
+@media (max-width: 600px) {
+  .Footer {
+    font-size: 12px;
+  }
+}

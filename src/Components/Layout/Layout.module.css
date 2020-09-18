@@ -2,3 +2,9 @@
   min-height: calc(100vh - 180px);
   background-color: #4e657a;
 }
+
+@media (max-width: 600px) {
+  .Child {
+    min-height: calc(100vh - 130px);
+  }
+}
