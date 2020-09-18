@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/EdYoda-Assignment-14/static/css/main.1b436d73.chunk.css",
+    "main.js": "/EdYoda-Assignment-14/static/js/main.dcf336a5.chunk.js",
+    "main.js.map": "/EdYoda-Assignment-14/static/js/main.dcf336a5.chunk.js.map",
+    "runtime-main.js": "/EdYoda-Assignment-14/static/js/runtime-main.d8b6960a.js",
+    "runtime-main.js.map": "/EdYoda-Assignment-14/static/js/runtime-main.d8b6960a.js.map",
+    "static/js/2.e4929e48.chunk.js": "/EdYoda-Assignment-14/static/js/2.e4929e48.chunk.js",
+    "static/js/2.e4929e48.chunk.js.map": "/EdYoda-Assignment-14/static/js/2.e4929e48.chunk.js.map",
+    "index.html": "/EdYoda-Assignment-14/index.html",
+    "precache-manifest.6981dfe9e0ddcd4226ab9f35cd64523f.js": "/EdYoda-Assignment-14/precache-manifest.6981dfe9e0ddcd4226ab9f35cd64523f.js",
+    "service-worker.js": "/EdYoda-Assignment-14/service-worker.js",
+    "static/css/main.1b436d73.chunk.css.map": "/EdYoda-Assignment-14/static/css/main.1b436d73.chunk.css.map",
+    "static/js/2.e4929e48.chunk.js.LICENSE.txt": "/EdYoda-Assignment-14/static/js/2.e4929e48.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8b6960a.js",
+    "static/js/2.e4929e48.chunk.js",
+    "static/css/main.1b436d73.chunk.css",
+    "static/js/main.dcf336a5.chunk.js"
+  ]
+}
