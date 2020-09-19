@@ -15,32 +15,13 @@ let initialState = {
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOG_IN':
-      if (state.loginStatus.status === true) {
-        return {
-          ...state,
-          loginStatus: {
-            member: null,
-            status: false,
-          },
-        };
-      } else if (state.loginStatus.status === false) {
-        return {
-          ...state,
-          loginStatus: {
-            member: action.member,
-            status: true,
-          },
-        };
-      } else {
-        return {
-          ...state,
-          loginStatus: {
-            member: null,
-            status: false,
-          },
-        };
-      }
-
+      return {
+        ...state,
+        loginStatus: {
+          status: action.status,
+          member: action.member,
+        },
+      };
     default:
       return {
         ...state,

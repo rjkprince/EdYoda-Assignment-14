@@ -55,9 +55,7 @@ class Header extends Component {
       });
     }
   };
-  myLoginHandler = (key) => {
-    this.props.logInHandler(key);
-  };
+
   componentDidMount = () => {
     let pathname = window.location.pathname.split('/')[1];
 
@@ -75,9 +73,7 @@ class Header extends Component {
 
     if (JSON.parse(localStorage.getItem('loginStatus')) != null) {
       let loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
-
-      this.myLoginHandler(loginStatus.member);
-      this.myLoginHandler(loginStatus.member);
+      this.props.logInHandler(loginStatus.member, loginStatus.status);
     }
   };
   render() {
@@ -118,7 +114,7 @@ class Header extends Component {
           <p
             className={classes.Login}
             onClick={() => {
-              this.props.logInHandler();
+              this.props.logInHandler(null, false);
               localStorage.setItem('loginStatus', null);
             }}
           >
@@ -176,7 +172,8 @@ const mapStateToProps = (globalState) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logInHandler: (person) => dispatch({ type: 'LOG_IN', member: person }),
+    logInHandler: (person, status) =>
+      dispatch({ type: 'LOG_IN', member: person, status: status }),
   };
 };
 

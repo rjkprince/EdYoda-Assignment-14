@@ -33,7 +33,7 @@ export default class Login extends Component {
     let login = false;
     for (let keys in data) {
       if (data[keys]['email'] === name && data[keys]['password'] === password) {
-        this.props.loginStatusHandler(keys);
+        this.props.loginStatusHandler(keys, true);
         login = true;
         let loginStatus = {
           status: true,

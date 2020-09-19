@@ -6,7 +6,7 @@ import AccountsPage from './Components/Accounts/Accounts';
 import DashboardPage from './Components/Dashboard/Dashboard';
 import Error404 from './Components/Error404/Error404';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 class App extends Component {
   componentDidMount() {
     if (
@@ -60,10 +60,4 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    logInHandler: (person) => dispatch({ type: 'LOG_IN', member: person }),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;

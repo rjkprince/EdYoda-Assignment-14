@@ -10,7 +10,7 @@ class Dashboard extends Component {
     let loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
     if (loginStatus) {
       if (loginStatus.status) {
-        this.props.logInHandler(loginStatus.member);
+        this.props.logInHandler(loginStatus.member, loginStatus.status);
       }
     }
     let DashboardData = JSON.parse(localStorage.getItem('dashboardPage'));
@@ -18,8 +18,8 @@ class Dashboard extends Component {
       localData: DashboardData,
     });
   };
-  loginStatusHandler = (person) => {
-    this.props.logInHandler(person);
+  loginStatusHandler = (person, status) => {
+    this.props.logInHandler(person, status);
   };
   render() {
     if (this.props.loginStatus.status) {
@@ -42,7 +42,8 @@ const mapStateToProps = (globalState) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logInHandler: (person) => dispatch({ type: 'LOG_IN', member: person }),
+    logInHandler: (person, status) =>
+      dispatch({ type: 'LOG_IN', member: person, status: status }),
   };
 };
 
