@@ -26,6 +26,13 @@
   cursor: pointer;
   transition: all linear 100ms;
 }
+.Login a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 2px;
+}
 .Login span {
   font-weight: 700;
 }
@@ -100,6 +107,9 @@
 }
 @media (max-width: 600px) {
   .Header {
-    height: 40px;
+    height: 45px;
+  }
+  .Logo {
+    font-size: 18px;
   }
 }

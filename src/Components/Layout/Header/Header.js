@@ -7,9 +7,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt, faUser } from '@fortawesome/free-regular-svg-icons';
 import Navigations from './Navigations/Navigations';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default class Header extends Component {
+class Header extends Component {
   state = {
     activeNav: 4,
     show_drp: false,
@@ -54,6 +55,31 @@ export default class Header extends Component {
       });
     }
   };
+  myLoginHandler = (key) => {
+    this.props.logInHandler(key);
+  };
+  componentDidMount = () => {
+    let pathname = window.location.pathname.split('/')[1];
+
+    let activeNavId = 1;
+    this.Navigation.map((item) => {
+      if (item.id !== 2 && item.id !== 5) {
+        if (item.name === pathname) {
+          activeNavId = item.id;
+        }
+      }
+    });
+    this.setState({
+      activeNav: activeNavId,
+    });
+
+    if (JSON.parse(localStorage.getItem('loginStatus')) != null) {
+      let loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
+
+      this.myLoginHandler(loginStatus.member);
+      this.myLoginHandler(loginStatus.member);
+    }
+  };
   render() {
     const Nav = this.Navigation.map((item) => {
       if (item.id === 2 || item.id === 5) {
@@ -88,9 +114,32 @@ export default class Header extends Component {
       <div className={classes.Header}>
         <h1 className={classes.Logo}>PRODUCT ADMIN</h1>
         <div className={classes.Navigations}>{Nav}</div>
-        <p className={classes.Login}>
-          Admin,<span>Logout</span>
-        </p>
+        {this.props.loginStatus.status ? (
+          <p
+            className={classes.Login}
+            onClick={() => {
+              this.props.logInHandler();
+              localStorage.setItem('loginStatus', null);
+            }}
+          >
+            {' '}
+            {this.props.loginStatus.member},<span>Logout</span>{' '}
+          </p>
+        ) : (
+          <p className={classes.Login}>
+            <Link
+              to='/Dashboard'
+              onClick={() => {
+                this.setState({
+                  activeNav: 1,
+                });
+              }}
+            >
+              <span>Login</span>
+            </Link>
+          </p>
+        )}
+
         <div className={classes.HbIcon}>
           <div
             onClick={() => {
@@ -118,3 +167,17 @@ export default class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = (globalState) => {
+  return {
+    loginStatus: globalState.loginStatus,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logInHandler: (person) => dispatch({ type: 'LOG_IN', member: person }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

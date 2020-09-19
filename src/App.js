@@ -3,8 +3,11 @@ import classes from './App.module.css';
 import Layout from './Components/Layout/Layout';
 import axios from 'axios';
 import AccountsPage from './Components/Accounts/Accounts';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-export default class App extends Component {
+import DashboardPage from './Components/Dashboard/Dashboard';
+import Error404 from './Components/Error404/Error404';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+class App extends Component {
   componentDidMount() {
     if (
       localStorage.getItem('accountsPage') === null ||
@@ -39,7 +42,16 @@ export default class App extends Component {
         <Layout>
           <div className={classes.App}>
             <Switch>
+              <Route
+                exact
+                path='/'
+                render={() => {
+                  return <Redirect to='/Dashboard' />;
+                }}
+              />
               <Route path='/Accounts' component={AccountsPage} />
+              <Route path='/Dashboard' component={DashboardPage} />
+              <Route component={Error404} />
             </Switch>
           </div>
         </Layout>
@@ -47,3 +59,11 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logInHandler: (person) => dispatch({ type: 'LOG_IN', member: person }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);
