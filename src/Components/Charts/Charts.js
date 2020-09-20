@@ -106,6 +106,19 @@ export default class Charts extends Component {
             }}
           />
         );
+      default:
+        return (
+          <Pie
+            data={this.returnChartData()}
+            options={{
+              legend: {
+                labels: {
+                  fontColor: '#fff',
+                },
+              },
+            }}
+          />
+        );
     }
   };
   render() {

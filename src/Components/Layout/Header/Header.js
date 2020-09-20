@@ -60,7 +60,7 @@ class Header extends Component {
     let pathname = window.location.pathname.split('/')[1];
 
     let activeNavId = -1;
-    if (pathname == '') {
+    if (pathname === '') {
       activeNavId = 1;
     }
     this.Navigation.map((item) => {
@@ -69,6 +69,7 @@ class Header extends Component {
           activeNavId = item.id;
         }
       }
+      return 0;
     });
     this.setState({
       activeNav: activeNavId,

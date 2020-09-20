@@ -3,7 +3,7 @@ import classes from './Accounts.module.css';
 import defaultAvatar from '../../Assets/default-avatar.jpg';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReactDOM from 'react-dom';
+
 export default class Accounts extends Component {
   constructor(props) {
     super(props);
