@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
   state = {
-    activeNav: 4,
+    activeNav: -1,
     show_drp: false,
   };
   Navigation = [
@@ -59,7 +59,10 @@ class Header extends Component {
   componentDidMount = () => {
     let pathname = window.location.pathname.split('/')[1];
 
-    let activeNavId = 1;
+    let activeNavId = -1;
+    if (pathname == '') {
+      activeNavId = 1;
+    }
     this.Navigation.map((item) => {
       if (item.id !== 2 && item.id !== 5) {
         if (item.name === pathname) {

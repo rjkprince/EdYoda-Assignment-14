@@ -1,0 +1,49 @@
+.Orders {
+  display: flex;
+  background-color: #50697f;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 3px;
+}
+.Orders p {
+  width: 12%;
+}
+.Date {
+  width: 14% !important;
+}
+.Status {
+  display: flex;
+
+  align-items: center;
+}
+.Status div {
+  padding: 2px;
+  width: 1px;
+  height: 1px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+.Moving {
+  background-color: greenyellow;
+  box-shadow: 0 0 4px greenyellow;
+  padding: 2px;
+  width: 1px;
+  height: 1px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+.Pending {
+  background-color: orange;
+  box-shadow: 0 0 4px orange;
+}
+.Cancelled {
+  background-color: red;
+  box-shadow: 0 0 4px red;
+}
+.Delivered {
+  background-color: rgb(13, 216, 243);
+  box-shadow: 0 0 4px rgb(13, 216, 243);
+}
+.BoldPara {
+  font-weight: 700;
+}

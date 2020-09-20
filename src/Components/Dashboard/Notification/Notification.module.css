@@ -1,0 +1,38 @@
+.Notification {
+  background-color: #4e657a;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.Avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 60px;
+  margin: 0;
+}
+.Details {
+  margin: 0;
+  width: 78%;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Details p {
+  margin: 0;
+}
+a {
+  margin: 0;
+  text-decoration: none;
+  color: #f5a623;
+}
+a:hover {
+  color: blue;
+}
+.Time {
+  color: #abcceb;
+  font-size: 14px;
+}

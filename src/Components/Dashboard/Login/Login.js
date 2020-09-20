@@ -61,7 +61,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className={classes.Login}>
-        <div className={classes.ListAcc}>
+        <div className={classes.LoginDiv}>
           <h1 className={classes.Title}>Welcome to Dashboard, Login</h1>
 
           <div className={classes.InputDiv}>
