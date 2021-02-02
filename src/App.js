@@ -42,13 +42,7 @@ class App extends Component {
         <Layout>
           <div className={classes.App}>
             <Switch>
-              <Route
-                exact
-                path='/'
-                render={() => {
-                  return <Redirect to='/Dashboard' />;
-                }}
-              />
+             
               <Route path='/Accounts' component={AccountsPage} />
               <Route path='/Dashboard' component={DashboardPage} />
               <Route component={Error404} />
