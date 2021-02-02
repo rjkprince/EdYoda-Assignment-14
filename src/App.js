@@ -5,7 +5,7 @@ import axios from 'axios';
 import AccountsPage from './Components/Accounts/Accounts';
 import DashboardPage from './Components/Dashboard/Dashboard';
 import Error404 from './Components/Error404/Error404';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
